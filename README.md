@@ -1,4 +1,9 @@
-# Ngchart
+# ng2-charts Example Code
+
+Example of how to use the ng2-charts library with the [Chart.js](https://www.chartjs.org) library.
+
+## Angular bit
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
