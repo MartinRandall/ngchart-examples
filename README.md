@@ -1,6 +1,6 @@
 # ng2-charts Example Code
 
-Example of how to use the ng2-charts library with the [Chart.js](https://www.chartjs.org) library.
+Example of how to use the [ng2-charts](https://www.npmjs.com/package/ng2-charts) library with the [Chart.js](https://www.chartjs.org) library.
 
 ## Angular bit
 
