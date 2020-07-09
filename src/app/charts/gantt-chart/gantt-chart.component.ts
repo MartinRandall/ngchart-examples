@@ -7,15 +7,15 @@ import * as moment from 'moment';
   templateUrl: './gantt-chart.component.html',
   styleUrls: ['./gantt-chart.component.scss']
 })
-export class GanttChartComponent  {
+export class GanttChartComponent {
 
-  scatterChartData: Chart.ChartDataSets[] =  [
+  scatterChartData: Chart.ChartDataSets[] = [
     {
       backgroundColor: 'rgba(246,156,85,1)',
       borderColor: 'rgba(246,156,85,1)',
       fill: false,
-      borderWidth : 15,
-      pointRadius : 0,
+      borderWidth: 15,
+      pointRadius: 0,
       data: [
         {
           t: moment(),
@@ -30,8 +30,8 @@ export class GanttChartComponent  {
       backgroundColor: 'rgba(208,255,154,1)',
       borderColor: 'rgba(208,255,154,1)',
       fill: false,
-      borderWidth : 15,
-      pointRadius : 0,
+      borderWidth: 15,
+      pointRadius: 0,
       data: [
         {
           t: moment().add(2, 'days'),
@@ -46,8 +46,8 @@ export class GanttChartComponent  {
       backgroundColor: 'rgba(246,156,85,1)',
       borderColor: 'rgba(246,156,85,1)',
       fill: false,
-      borderWidth : 15,
-      pointRadius : 0,
+      borderWidth: 15,
+      pointRadius: 0,
       data: [
         {
           t: moment().add(5, 'days'),
@@ -62,8 +62,8 @@ export class GanttChartComponent  {
       backgroundColor: 'rgba(208,255,154,1)',
       borderColor: 'rgba(208,255,154,1)',
       fill: false,
-      borderWidth : 15,
-      pointRadius : 0,
+      borderWidth: 15,
+      pointRadius: 0,
       data: [
         {
           t: moment().add(6, 'days'),
@@ -87,9 +87,15 @@ export class GanttChartComponent  {
 
         time: {
           unit: 'day',
-          min: moment().toISOString(),
-          max: moment().add(10, 'days').toISOString(),
+          parser: f => {
+            console.log(f);
+            return f._isAMomentObject != null ? f : moment();
+          }
         },
+        ticks: {
+          min: moment(),
+          max: moment().add(10, 'days'),
+        }
       }],
       yAxes: [{
         type: 'category',
