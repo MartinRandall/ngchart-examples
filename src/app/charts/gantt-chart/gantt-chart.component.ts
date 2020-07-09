@@ -84,17 +84,14 @@ export class GanttChartComponent {
       xAxes: [{
         type: 'time',
         position: 'bottom',
+        offset: true,
 
         time: {
           unit: 'day',
-          parser: f => {
-            console.log(f);
-            return f._isAMomentObject != null ? f : moment();
-          }
+          parser: f => f._isAMomentObject != null ? f : moment()
         },
         ticks: {
-          min: moment(),
-          max: moment().add(10, 'days'),
+          source: 'auto'
         }
       }],
       yAxes: [{
